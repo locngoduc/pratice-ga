@@ -1,24 +1,24 @@
 name: Practice
 
-on: 
-    push:
-        branches:
-            - main
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout code
-            uses: actions/checkout@v4
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-            - name: Java Set Up
-            uses: actions/setup-java@v4
-            with:
-                java-version: 21
+      - name: Java Set Up
+        uses: actions/setup-java@v4
+        with:
+          java-version: "21"
 
-            - name Build With Gradle
-            run: gradle build
+      - name: Build With Gradle
+        run: gradle build
 
-            - name: Test With Gradle
-            run: gradle test
+      - name: Test With Gradle
+        run: gradle test
